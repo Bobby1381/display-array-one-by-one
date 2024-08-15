@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Display with Delay</title>
+</head>
+<body>
+    <center>
+    <h1 id="display"></h1>
+    <script>
+        
+        const array = [
+            "You can do it",
+            "Welcome to the kamal sir classes",
+            "Just do it",
+            "Enjoy the sequence!"
+        ];
+
+        
+        const displayDiv = document.getElementById('display');
+
+        
+        function showArrayElements(arr, interval) {
+            let index = 0;
+
+            
+            function updateDisplay() {
+                if (index < arr.length) {
+                    displayDiv.textContent = arr[index];
+                    index++;
+                    setTimeout(updateDisplay, interval);
+                }
+            }
+
+            
+            updateDisplay();
+        }
+
+        
+        showArrayElements(array, 1000);
+    </script>
+    </center>
+</body>
+</html>
